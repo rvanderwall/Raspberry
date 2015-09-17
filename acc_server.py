@@ -11,6 +11,12 @@ urls = (
     '/', 'index'
 )
 
+# Accelerometer:
+#   vcc -  pin 01   3.3V
+#   gnd - pin 09   gnd
+#   scl -   pin 06   GPIO03 (SCL1 - I2C)
+#   sda -  pin 03   GPIO02 (SDA1 - I2C)
+
 # Power Management registers
 power_mgmt_1 = 0x6b
 power_mgmt_2 = 0x6c

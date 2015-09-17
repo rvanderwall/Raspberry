@@ -4,6 +4,13 @@ import smbus
 import math
 import time
 
+# Accelerometer:
+#   vcc -  pin 01   3.3V
+#   gnd - pin 09   gnd
+#   scl -   pin 06   GPIO03 (SCL1 - I2C)
+#   sda -  pin 03   GPIO02 (SDA1 - I2C)
+
+
 # Power Management registers
 power_mgmt_1 = 0x6b
 power_mgmt_2 = 0x6c
@@ -102,8 +109,14 @@ while True:
         max_z = accel_z_scaled
         changed = True
 
+    print
+    print "accel_xout: ", accel_x, " scaled: ", accel_x_scaled
+    print "accel_yout: ", accel_y, " scaled: ", accel_y_scaled
+    print "accel_zout: ", accel_z, " scaled: ", accel_z_scaled
+
     if changed:
         print "max_x: ", max_x, " scaled: ", accel_x_scaled
         print "max_y: ", max_y, " scaled: ", accel_y_scaled
         print "max_z: ", max_z, " scaled: ", accel_z_scaled
         
+    time.sleep(0.5)
