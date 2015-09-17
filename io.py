@@ -3,9 +3,17 @@ import time
 
 GPIO.setmode(GPIO.BCM)
 
+# pin 16
+# ground pin 20
 GPIO.setup(23, GPIO.OUT)
-GPIO.setup(24, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+
+# pin 22
+# ground pin 6
 GPIO.setup(25, GPIO.OUT)
+
+# pin 18
+# ground pin 2
+GPIO.setup(24, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 
 BLINKING=0
 STEADY_ON=1

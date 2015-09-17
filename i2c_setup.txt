@@ -25,7 +25,8 @@
 #
 # lsmod | grep i2c
 # i2cdetect -y 1
-£  Make sure the i2c device is plugged in
+
+# Make sure the i2c device is plugged in
 
 
 
