@@ -24,7 +24,10 @@
 # sudo modprobe i2c-bcm2708
 #
 # lsmod | grep i2c
-# i2cdetect -y 1
+
+# Make sure the device is plugged in
+
+# sudo i2cdetect -y 1
 
 # Make sure the i2c device is plugged in
 
