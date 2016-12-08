@@ -1,0 +1,14 @@
+
+
+192.168.1.254 is the router.
+Find the ip of the raspberry pi
+for example, 192.168.1.165
+
+ssh pi@192.168.1.165
+> raspberry
+
+
+github
+rvanderwall/temp123Morning
+
+
