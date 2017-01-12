@@ -56,7 +56,7 @@ class Servo():
             delta = -delta
         self.old_position = position
         sleep_time = delta / 50
-        sleep_time = 1
+        sleep_time = 0.200
         print("Delay for {} second".format(sleep_time))
         time.sleep(sleep_time)
         

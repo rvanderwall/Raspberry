@@ -51,5 +51,5 @@ while True:
     finger4.close()
     finger4.open()
     finger5.close()
-    finger5.close()
+    finger5.open()
 
