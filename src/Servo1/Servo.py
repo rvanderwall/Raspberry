@@ -19,6 +19,12 @@ class Servo():
         self.old_position = servoMin
         self.__servo_offset = servoMin
         self.__servo_scale = (servoMax - servoMin)/100
+        self.__min = 0
+        self.__max = 100
+
+    def set_min_max(self, min, max):
+        self.__min = min
+        self.__max = max
 
     def setServoPulse(channel, pulse):
       pulseLength = 1000000                   # 1,000,000 us per second
@@ -30,12 +36,17 @@ class Servo():
       pulse /= pulseLength
       pwm.setPWM(channel, 0, pulse)
 
+    def send_to_min(self):
+        self.move_to_position(self.__min)
+
+    def send_to_max(self):
+        self.move_to_position(self.__max)
 
     def move_to_position(self, position):
-        if position < 0:
-            position = 0
-        if position > 100:
-            position = 100
+        if position < self.__min:
+            position = self.__min
+        if position > self.__max:
+            position = self.__max
 
         off_time = 0
         on_time = self.__servo_scale * position + self.__servo_offset
@@ -44,7 +55,8 @@ class Servo():
         if delta < 0:
             delta = -delta
         self.old_position = position
-        sleep_time = delta / 20
+        sleep_time = delta / 50
+        sleep_time = 1
         print("Delay for {} second".format(sleep_time))
         time.sleep(sleep_time)
         
