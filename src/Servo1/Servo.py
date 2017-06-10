@@ -1,7 +1,9 @@
 #!/usr/bin/python
 
-from Adafruit_PWM_Servo_Driver import PWM
 import time
+
+from Servo1.AdaFruitLib.Adafruit_PWM_Servo_Driver import PWM
+
 
 # Initialise the PWM device using the default address
 #pwm = PWM(0x40)
@@ -49,7 +51,7 @@ class Servo():
         if position > self.__max:
             position = self.__max
 
-	print("position: {}, scale:{}  offset:{}".format(position, self.__servo_scale, self.__servo_offset))
+        print("position: {}, scale:{}  offset:{}".format(position, self.__servo_scale, self.__servo_offset))
         off_time = 0
         on_time = int(self.__servo_scale * position + self.__servo_offset)
         print("Set servo off:{}  on:{}".format(off_time, on_time))
