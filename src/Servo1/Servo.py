@@ -19,8 +19,9 @@ class Servo():
         self.old_position = servoMin
         self.__servo_offset = servoMin
         self.__servo_scale = (servoMax - servoMin)/100.0
-        self.__min = 0
-        self.__max = 100
+
+        self.__min = 0.0
+        self.__max = 100.0
 
     def set_min_max(self, min, max):
         self.__min = min
