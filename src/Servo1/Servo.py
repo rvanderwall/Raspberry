@@ -2,7 +2,7 @@
 
 import time
 
-from Servo1.AdaFruitLib.Adafruit_PWM_Servo_Driver import PWM
+from AdaFruitLib.Adafruit_PWM_Servo_Driver import PWM
 
 
 # Initialise the PWM device using the default address
