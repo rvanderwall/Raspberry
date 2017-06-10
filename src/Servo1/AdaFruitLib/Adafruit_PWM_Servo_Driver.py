@@ -3,7 +3,7 @@
 import time
 import math
 
-from Servo1.AdaFruitLib import Adafruit_I2C
+from AdaFruitLib import Adafruit_I2C
 
 
 # ============================================================================
