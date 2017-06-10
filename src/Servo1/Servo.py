@@ -10,17 +10,17 @@ pwm = PWM(0x40)
 
 pwm.setPWMFreq(60)                        # Set frequency to 60 Hz
 
-servoMin = 100  # Min pulse length out of 4096
-servoMax = 700  # Max pulse length out of 4096
+servoMin = 100.0  # Min pulse length out of 4096
+servoMax = 700.0  # Max pulse length out of 4096
 
 class Servo():
     def __init__(self, servo_id):
         self.servo_id = servo_id
         self.old_position = servoMin
         self.__servo_offset = servoMin
-        self.__servo_scale = (servoMax - servoMin)/100
-        self.__min = 0
-        self.__max = 100
+        self.__servo_scale = (servoMax - servoMin)/100.0
+        self.__min = 0.0
+        self.__max = 100.0
 
     def set_min_max(self, min, max):
         self.__min = min
