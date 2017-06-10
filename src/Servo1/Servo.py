@@ -4,21 +4,21 @@ from Adafruit_PWM_Servo_Driver import PWM
 import time
 
 # Initialise the PWM device using the default address
-pwm = PWM(0x40)
+#pwm = PWM(0x40)
 # Note if you'd like more debug output you can instead run:
-#pwm = PWM(0x40, debug=True)
+pwm = PWM(0x40, debug=True)
 
-pwm.setPWMFreq(60)                        # Set frequency to 60 Hz
+pwm.setPWMFreq(50)                        # Set frequency to 60 Hz
 
-servoMin = 100  # Min pulse length out of 4096
-servoMax = 700  # Max pulse length out of 4096
+servoMin = 0     # Min pulse length out of 4096
+servoMax = 4000  # Max pulse length out of 4096
 
 class Servo():
     def __init__(self, servo_id):
         self.servo_id = servo_id
         self.old_position = servoMin
         self.__servo_offset = servoMin
-        self.__servo_scale = (servoMax - servoMin)/100
+        self.__servo_scale = (servoMax - servoMin)/100.0
         self.__min = 0
         self.__max = 100
 
@@ -48,8 +48,10 @@ class Servo():
         if position > self.__max:
             position = self.__max
 
+	print("position: {}, scale:{}  offset:{}".format(position, self.__servo_scale, self.__servo_offset))
         off_time = 0
-        on_time = self.__servo_scale * position + self.__servo_offset
+        on_time = int(self.__servo_scale * position + self.__servo_offset)
+        print("Set servo off:{}  on:{}".format(off_time, on_time))
         pwm.setPWM(self.servo_id, off_time, on_time)
         delta = self.old_position - position
         if delta < 0:
