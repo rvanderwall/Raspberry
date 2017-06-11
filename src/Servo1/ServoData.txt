@@ -1,0 +1,15 @@
+[
+{
+    "Description" : "TowerPro Microserver 99",
+    "type": "SG90",
+    "cw_on_time": 300,
+    "ccw_on_time": 1120
+},
+
+{
+    "Description" : "Prime Elite Servo",
+    "type": "PES",
+    "cw_on_time": 1050,
+    "ccw_on_time": 250
+}
+
