@@ -1,6 +1,6 @@
 __author__ = 'robert'
 
-from Servo1.Servo import Servo
+from ServoLib.Servo import Servo
 
 servo_num = raw_input("Which servo?")
 
