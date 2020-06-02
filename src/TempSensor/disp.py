@@ -58,10 +58,12 @@ draw.line((x, top, x+shape_width, bottom), fill=255)
 
 x += shape_width+padding
 font = ImageFont.load_default()
+(font_width, font_height) = font.getsize("text")
 
 draw.text((x,top), "Hello", font=font, fill=255)
 draw.text((x,top+20), "world", font=font, fill=255)
 
+draw.k
 disp.image(image)
 disp.display()
 print("done")
