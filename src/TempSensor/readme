@@ -2,7 +2,28 @@
 sudo apt-get update
 sudo apt-get upgrade
 
+# Enable I2C using raspi-config
+
+sudo apt-get install build-essential python-dev python-pip
+sudo apt-get install -y python-pil python-smbus i2c-tools
+
+i2cdetect -y l
+# Returns 3c: display  44:sensor
+
 sudo pip3 install adafruit-circuitpython-sht31d
-sudo pip3 install adafruit-circuitpython-sht31d
+sudo pip3 install RPi.GPIO
+
+#sudo pip3 install adafruit-circuitpython-ssd1306
+git clone https://github.com/adafruit/Adafruit_Python_SSD1306.git
+cd Adafruit_Python_SSD1306
+sudo python setup.py install
+
+adafruit-circuitpython-sht31d    2.3.1      
+adafruit-circuitpython-ssd1306   2.8.3      
+
+
+
+
+
 
 
