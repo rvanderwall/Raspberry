@@ -1,0 +1,8 @@
+
+sudo apt-get update
+sudo apt-get upgrade
+
+sudo pip3 install adafruit-circuitpython-sht31d
+sudo pip3 install adafruit-circuitpython-sht31d
+
+
